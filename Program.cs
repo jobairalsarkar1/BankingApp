@@ -1,9 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 Bank bank = new();
 
 while (true)
 {
-    Console.WriteLine("\n---Banking System ---");
+    Console.WriteLine("\n--- Banking System ---");
     Console.WriteLine("1. Create Account");
     Console.WriteLine("2. Login");
     Console.WriteLine("3. Exit");
@@ -26,7 +27,8 @@ while (true)
                 Console.WriteLine("1. Deposit Money");
                 Console.WriteLine("2. Withdraw Money");
                 Console.WriteLine("3. Check Balance");
-                Console.WriteLine("4. Logout");
+                if (account is SavingsAccount) Console.WriteLine("4. Apply Interest");
+                Console.WriteLine("5. Logout");
                 Console.Write("Choose an option: ");
 
                 string accountChoice = Console.ReadLine()!;
@@ -59,7 +61,11 @@ while (true)
                 {
                     account.DisplayBalance();
                 }
-                else if (accountChoice == "4")
+                else if (accountChoice == "4" && account is SavingsAccount savingsAccount)
+                {
+                    savingsAccount.ApplyInterest();
+                }
+                else if (accountChoice == "5")
                 {
                     Console.WriteLine("Logging out...");
                     break;

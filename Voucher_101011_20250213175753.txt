@@ -1,0 +1,6 @@
+----- Withdrawal Voucher -----
+Account Holder: Jobair Al Sarkar
+Account Number: 101011
+Withdrawn Amount: $400.00
+Date & Time: 2/13/2025 5:57:53 PM
+-----------------------------
